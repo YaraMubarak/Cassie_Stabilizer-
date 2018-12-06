@@ -1,4 +1,4 @@
-function [J1f, J1b, J2f, J2b] = computeFootJacobians(q,model)
+function [J1f, J1b, J2f, J2b] = computeFootJacobians(q,dq,model)
 
 [qy, dqy, G] = model.gamma_q(model, q, dq) ;
  

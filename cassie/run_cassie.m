@@ -5,7 +5,7 @@ close all ;
 startup;
 
 % Load Cassie model and set Initial configuration
-load('cassie_model.mat') ;
+load('mat/cassie_model.mat') ;
 
 % Initial configuration
 x0 = getInitialState(model);
@@ -61,14 +61,17 @@ figure() ;
     subplot(3,1,1);plot(t_vec, r_com) ;grid ; title('com positions x-y-z') ;hold; legend('x','y','z') ;
     subplot(3,1,2); plot(t_vec, x_vec(:,4:6)) ; grid ; title('base angles') ; 
     subplot(3,1,3); plot(t_vec, x_vec(:,7:model.n)) ; grid ; title('joint angles') ; 
+'done graph 1'
     
 % Plot Base (Pelvis) Position
 figure ; plot(t_vec, x_vec(:,1:3)) ; grid on ;
     title('Base (Pelvis) Translation') ; legend('x','y','z') ;
+'done graph 2'
     
 % Plot Base (Pelvis) Orientation
 figure ; plot(t_vec, x_vec(:,4:6)*180/pi) ; grid on ;
     title('Base (Pelvis) Orientation') ; legend('r','p','y') ;
+'done graph 3'
     
 % Plot Torques
 figure ; 
@@ -78,3 +81,4 @@ figure ;
     subplot(2,1,2) ;
         plot(t_vec, tau_vec(:, [model.jidx.hip_abduction_right; model.jidx.hip_rotation_right; model.jidx.hip_flexion_right; model.jidx.knee_joint_right; model.jidx.toe_joint_right])) ;
         grid on ; title('Right Torques') ; legend('abduction','rotation','flexion','knee','toe') ;
+'done graph 4'

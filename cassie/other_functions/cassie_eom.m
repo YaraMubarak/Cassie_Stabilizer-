@@ -28,6 +28,8 @@ tau(model.actuated_idx) = tauStudent;
 
 f_ext = externalForce(t, q, model);
 
+
+
 %% ----------------------------Dynamics-------------------------------------
 % -------------------------------------------------------------------------
 % ground contact model
